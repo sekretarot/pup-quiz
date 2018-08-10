@@ -32,6 +32,21 @@ class Game extends Component {
     return this.props.game.questions.slice(-1).pop()
   }
 
+  correctAnswersCount() {
+    let correctAnswers = 0;
+    this.props.game.questions.forEach(
+      function(question) {
+        if(question.correctAnswer == question.answer){
+          correctAnswers++;
+        }
+      })
+    return correctAnswers
+  }
+
+  answeredQuestionsCount() {
+    return this.props.game.questions.filter(question => question.answer).length
+  }
+
   renderData(item) {
     if(this.currentQuestion() && this.currentQuestion().answer !== undefined){
       this.props.gameActions.fetchQuestion();
@@ -56,6 +71,7 @@ class Game extends Component {
         }else{
             return (
                 <div className="a">
+                    <p>Correct: {this.correctAnswersCount()}/{this.answeredQuestionsCount()}</p>
                     {
                       this.renderData(this.currentQuestion())
                     }
