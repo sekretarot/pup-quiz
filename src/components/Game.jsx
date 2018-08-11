@@ -28,6 +28,10 @@ class Game extends Component {
     this.props.gameActions.questionAnswered(this.props.game.questions.length -1, this.currentQuestion().options.findIndex(option => option == answer));
   }
 
+  nextQuestion = () => {
+    this.props.gameActions.fetchQuestion();
+  }
+
   currentQuestion() {
     return this.props.game.questions.slice(-1).pop()
   }
@@ -48,13 +52,9 @@ class Game extends Component {
   }
 
   renderData(item) {
-    if(this.currentQuestion() && this.currentQuestion().answer !== undefined){
-      this.props.gameActions.fetchQuestion();
-      return null;
-    }
 
     if(item != undefined){
-      return <Question id={this.state.questions.length} options={item.options} correctAnswer={item.correctAnswer} answerCallback={this.questionAnswer} />;
+      return <Question id={this.state.questions.length} options={item.options} correctAnswer={item.correctAnswer} answer={item.answer} answerCallback={this.questionAnswer} nextQuestionCallback={this.nextQuestion} />;
     }
     else{
       return null;
@@ -70,7 +70,7 @@ class Game extends Component {
             )
         }else{
             return (
-                <div className="a">
+                <div className="Game">
                     <p>Correct: {this.correctAnswersCount()}/{this.answeredQuestionsCount()}</p>
                     {
                       this.renderData(this.currentQuestion())

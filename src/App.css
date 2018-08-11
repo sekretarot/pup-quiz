@@ -26,3 +26,17 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.Game {
+  text-align: center;
+  width: 100%;
+}
+
+.Question {
+  text-align: center;
+  width: 100%;
+}
+
+.Question-image {
+  max-height: 300px;
+}
