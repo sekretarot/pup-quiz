@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 15s linear;
   height: 80px;
 }
 
@@ -39,4 +39,10 @@
 
 .Question-image {
   max-height: 300px;
+}
+
+.Welcome, .Result {
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
 }
