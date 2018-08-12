@@ -46,3 +46,13 @@
   width: 100%;
   padding-top: 20px;
 }
+
+.Social {
+  text-align: center;
+  width: 100%;
+}
+
+.SocialMediaShareButton {
+  display: inline-block;
+  padding: 0 4px;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.png';
 import '../App.css';
 import * as config from '../config'
+import Social from './Social'
 
 class Result extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Result extends Component {
           <h1 className="App-title">Result</h1>
           <h2> You've got {this.props.correctAnswersCount}/{config.MAX_QUESTIONS} </h2>
         </header>
+        <Social shareMessage={`I've got ${this.props.correctAnswersCount}/${config.MAX_QUESTIONS} answers`}/>
       </div>
     );
   }
