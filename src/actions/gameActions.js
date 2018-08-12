@@ -36,3 +36,7 @@ export function fetchQuestion() {
 export function questionAnswered(questionIndex, answerIndex) {
     return {type: actionTypes.QUESTION_ANSWERED, questionIndex: questionIndex, answerIndex: answerIndex};
 }
+
+export function gameFinished() {
+    return {type: actionTypes.GAME_FINISHED};
+}

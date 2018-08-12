@@ -21,6 +21,10 @@ export default function game(state = initialState.game, action) {
         }
         return question
       })})
+    case "GAME_FINISHED":
+      newState = {...state, isFinished: true};
+      console.log('GAME_FINISHED Action')
+      return newState;
     default:
       return state;
   }

@@ -3,10 +3,12 @@ import logo from '../logo.svg';
 import '../App.css';
 import { Link, Redirect } from "react-router-dom";
 import Question from './Question'
+import Result from './Result'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as gameActions from '../actions/gameActions';
 import PropTypes from 'prop-types';
+import * as config from '../config'
 
 class Game extends Component {
 
@@ -21,7 +23,8 @@ class Game extends Component {
       isLoaded: false,
       questions: props.questions || []
     };
-    this.questionAnswer = this.questionAnswer.bind(this) 
+    this.questionAnswer = this.questionAnswer.bind(this);
+    this.nextQuestion = this.nextQuestion.bind(this); 
   }
 
   questionAnswer = (answer) => {
@@ -29,7 +32,12 @@ class Game extends Component {
   }
 
   nextQuestion = () => {
-    this.props.gameActions.fetchQuestion();
+    if(this.props.game.questions.length >= config.MAX_QUESTIONS){
+      this.props.gameActions.gameFinished();
+    }
+    else {
+      this.props.gameActions.fetchQuestion();
+    }
   }
 
   currentQuestion() {
@@ -51,6 +59,10 @@ class Game extends Component {
     return this.props.game.questions.filter(question => question.answer).length
   }
 
+  isFinished() {
+    return this.props.game.isFinished
+  }
+
   renderData(item) {
 
     if(item != undefined){
@@ -68,7 +80,13 @@ class Game extends Component {
                     Loading Stuff...
                 </div>
             )
-        }else{
+        }
+        else if(this.isFinished()){
+          return(
+            <Result correctAnswersCount={this.correctAnswersCount()} />
+          )
+        }
+        else{
             return (
                 <div className="Game">
                     <p>Correct: {this.correctAnswersCount()}/{this.answeredQuestionsCount()}</p>
