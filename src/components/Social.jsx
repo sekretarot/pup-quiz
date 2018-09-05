@@ -24,7 +24,7 @@ class Social extends Component {
 
   render() {
     return (
-      <div class="Social">
+      <div className="Social">
         <FacebookShareButton url={config.SHARE_URL} quote={this.props.shareMessage}>
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>

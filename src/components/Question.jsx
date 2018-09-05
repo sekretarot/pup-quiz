@@ -32,7 +32,7 @@ class Question extends Component {
       </header>
 
 
-      <button onClick={() => this.props.nextQuestionCallback()}> Next Question </button>
+      <button className="button" onClick={() => this.props.nextQuestionCallback()}> Next Question </button>
       </div>
       );
   }
@@ -42,11 +42,11 @@ class Question extends Component {
       <div className="Question" id={this.state.id}>
       <header className="Welcome-header">
       <img src={this.props.options.length !== 0 ? this.props.correctAnswer.image : null} className="Question-image" alt="logo" />
-      <h1 className="App-title">Guess the breed</h1>
+      <h1 className="Question-title">Guess the breed</h1>
       </header>
 
       {this.props.options.map(function (i, index) {
-        return <button key={index} onClick={() => this.props.answerCallback(i)}> {i.answer} </button>
+        return <button className="Answer-button" key={index} onClick={() => this.props.answerCallback(i)}> {i.answer} </button>
       }, this)}
 
       </div>

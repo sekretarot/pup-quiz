@@ -12,7 +12,7 @@ class Welcome extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Pup Quiz</h1>
         </header>
-       <Link to={`/game`}>Start</Link>
+       <Link className="button" to={`/game`}>Start</Link>
       </div>
     );
   }

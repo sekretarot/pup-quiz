@@ -1,10 +1,27 @@
+body {
+  color: #1f6648;
+}
+body::after {
+  content: "";
+  background: url(background.png);
+  background-repeat: repeat;
+  background-size: 250px;
+  opacity: 0.35;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 15s linear;
-  height: 80px;
+  /*animation: App-logo-spin infinite 15s linear;*/
+  width: 160px;
 }
 
 .App-header {
@@ -30,6 +47,15 @@
 .Game {
   text-align: center;
   width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  background-color: #eaf6f1;
+  padding: 5px;
+}
+
+.Score {
+  width: 200px;
+  margin: 0 auto;
 }
 
 .Question {
@@ -39,12 +65,62 @@
 
 .Question-image {
   max-height: 300px;
+  border: 10px aliceblue solid;
+}
+
+.Question-title {
+  font-size: 1.5em;
+  width: 200px;
+  margin: 10px auto;
+}
+
+.Answer-button {
+  background: #2d7053;
+  width: 40%;
+  border: none;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.Answer-button:hover {
+  background: #91bca9;
+  color: #2d7053;
+}
+
+.button {
+  background: #2d7053;
+  width: 40%;
+  border: none;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.button:hover {
+  background: #91bca9;
+  color: #2d7053;
 }
 
 .Welcome, .Result {
   text-align: center;
   width: 100%;
   padding-top: 20px;
+  max-width: 520px;
+  margin: 0 auto;
+  background-color: #eaf6f1;
 }
 
 .Social {
