@@ -65,6 +65,7 @@ body::after {
 
 .Question-image {
   max-height: 300px;
+  max-width: 300px;
   border: 10px aliceblue solid;
 }
 
@@ -72,6 +73,10 @@ body::after {
   font-size: 1.5em;
   width: 200px;
   margin: 10px auto;
+}
+
+.Question-message {
+  font-size: 1.5em;
 }
 
 .Answer-button {

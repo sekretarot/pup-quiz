@@ -27,8 +27,10 @@ class Question extends Component {
       <div className="Question" id={this.state.id}>
       <header className="Welcome-header">
       <img src={this.props.options.length !== 0 ? this.props.correctAnswer.image : null} className="Question-image" alt="logo" />
-      <h1 className="App-title">{this.isAnsweredCorrectly() ? "Wooohooo!!!" : "You suck!!!"}</h1>
-      <h2 className="App-title">Correct Answer:  {this.props.correctAnswer.answer}</h2>
+      <br/>
+      <span className="Question-message">{this.isAnsweredCorrectly() ? "Correct!!!" : "Wrong!!!"}</span>
+      <br/>
+      <span className="Question-message">{this.props.correctAnswer.answer}</span>
       </header>
 
 

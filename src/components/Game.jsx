@@ -88,7 +88,7 @@ class Game extends Component {
         else{
             return (
                 <div className="Game">
-                    <p className="Score">Correct: {this.correctAnswersCount()}/{this.answeredQuestionsCount()}</p>
+                    <p className="Score">Score: {this.correctAnswersCount()}/{this.answeredQuestionsCount()}</p>
                     {
                       this.renderData(this.currentQuestion())
                     }
