@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as gameActions from '../actions/gameActions';
 import PropTypes from 'prop-types';
+import AdSense from 'react-adsense';
 
 class Question extends Component {
   constructor(props) {
@@ -50,7 +51,10 @@ class Question extends Component {
       {this.props.options.map(function (i, index) {
         return <button className="Answer-button" key={index} onClick={() => this.props.answerCallback(i)}> {i.answer} </button>
       }, this)}
-
+      <AdSense.Google
+  client='ca-pub-3321179177367577'
+  slot='7806394673'
+/>
       </div>
       );
   }
